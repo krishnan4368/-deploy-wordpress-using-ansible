@@ -1,1 +1,2 @@
-Make sure to replace ip_address with your host IP address in hosts file
+This projectis to deploy wordpress on a server using ansible play book
+Usage: clone this repo, replace hosts file with your server info and run command 'ansible-playbook -i ./hosts main.yml'
