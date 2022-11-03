@@ -1,0 +1,31 @@
+---
+# variables listed here are applicable for all hosts
+# dependency packages to be installed
+packages:
+    - nginx
+    - mysql-server
+    - python3-mysqldb
+    - unzip
+    - php8.1 
+    - php8.1-cli 
+    - php8.1-fpm 
+    - php8.1-mysql 
+    - php8.1-opcache 
+    - php8.1-mbstring 
+    - php8.1-xml 
+    - php8.1-gd 
+    - php8.1-curl 
+    - php8.1-bcmath
+
+# WordPress database
+wp_db_name: wordpress_db
+wp_db_user: wordpress_user
+wp_db_password: 4368Ulock
+
+# nginx 
+nginx_port: 80
+server_hostname: my.website.io
+web_root: /var/www/html/wordpress
+
+# location to extract source code
+extract_to: /var/www/html

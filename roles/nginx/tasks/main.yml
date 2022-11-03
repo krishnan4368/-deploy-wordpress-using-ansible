@@ -1,0 +1,15 @@
+---
+- name: Copy nginx configuration for wordpress
+  template: 
+    src: my.website.io.conf
+    dest: /etc/nginx/sites-available/my.website.io.conf
+
+- name: "Check if symlink exists"
+  stat:
+    path: "/etc/nginx/sites-enabled/my.website.io.conf"
+  register: result
+
+- name: "do nothing if symlink exists"
+  command: 'ln -s /etc/nginx/sites-available/my.website.io.conf /etc/nginx/sites-enabled/my.website.io.conf'
+  when: '(result.stat.islnk is undefined) or (not result.stat.islnk)'
+  notify: restart nginx

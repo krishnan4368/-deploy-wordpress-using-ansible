@@ -1,0 +1,12 @@
+---
+# Download and extract wordpress into web root
+  - name: 'Extract source code to web root'
+    unarchive:
+      src: https://wordpress.org/latest.zip
+      dest: "{{ extract_to }}"
+      remote_src: yes
+  
+  - name: 'Copy wp-config template to server'
+    template: 
+      src: wp-config-sample.php
+      dest: '{{ web_root }}/wp-config.php'
